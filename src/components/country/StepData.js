@@ -27,11 +27,11 @@ const StepData = (props) => {
   let resourcesAfter = props.step.resultResourcePool.valueMap;
   let stateQualtyAfter = props.step.resultResourcePool.stateQuality;
   
-  const columns = [{ field: 'state', headerName: 'State', width: 150 }]
+  const columns = [{ field: 'state', headerName: 'State', flex: 1 }]
     .concat(Object.keys(props.country.resourcePool.valueMap).map(key => ({
       field: key,
       headerName: key,
-      width: 150,
+      flex: 1,
       cellClassName: params => {
         if(params.value > resourcesBefore[key])
           return 'improved-cell';
@@ -45,7 +45,7 @@ const StepData = (props) => {
       { 
         field: 'stateQuality',
         headerName: 'State Quality',
-        width: 150,
+        flex: 1,
         cellClassName: params => {
           if(params.value > stateQualityBefore.toFixed(2))
             return 'improved-cell';
