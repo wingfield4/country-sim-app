@@ -5,6 +5,10 @@ const defaultConfiguration = {
   searchDepth: 20,
 	configFileName: null,
 
+	discountGamma: .999,
+	discountOffset: 10,
+	probabilityPenalty: -50,
+
   //resource config
   electronicsRange: [0, 10],
 	electronicsWasteRange: [0, 10],

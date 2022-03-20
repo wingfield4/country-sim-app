@@ -68,6 +68,38 @@ const Configuration = ({
               </MenuItem>
             ))}
           </Select>
+          
+          <br /><br />
+          <Typography>Discount Gamma</Typography>
+          <Slider
+            value={config.discountGamma}
+            onChange={(_, newValue) => setConfig({ ...config, discountGamma: newValue })}
+            valueLabelDisplay="auto"
+            min={0}
+            max={1}
+            step={.001}
+            style={{ width: 256 }}
+          />
+
+          <Typography>Discount Offset</Typography>
+          <Slider
+            value={config.discountOffset}
+            onChange={(_, newValue) => setConfig({ ...config, discountOffset: newValue })}
+            valueLabelDisplay="auto"
+            min={0}
+            max={50}
+            style={{ width: 256 }}
+          />
+
+          <Typography>Probability Penalty</Typography>
+          <Slider
+            value={config.probabilityPenalty}
+            onChange={(_, newValue) => setConfig({ ...config, probabilityPenalty: newValue })}
+            valueLabelDisplay="auto"
+            min={-100}
+            max={0}
+            style={{ width: 256 }}
+          />
         </ColumnContainer>
 
         {/* GENERATED METHOD OPTIONS */}
