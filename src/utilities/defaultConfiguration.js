@@ -5,7 +5,7 @@ const defaultConfiguration = {
   searchDepth: 20,
 	configFileName: null,
 
-	discountGamma: .999,
+	discountGamma: .99,
 	discountOffset: 10,
 	probabilityPenalty: -50,
 

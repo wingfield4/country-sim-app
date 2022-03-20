@@ -76,10 +76,10 @@ const StepData = (props) => {
     <Container>
       <Typography variant="h4">{props.step.name}</Typography>
       <Typography>{props.step.description}</Typography>
-      <Typography>Undiscounted Reward: {props.country.prophecy.undiscountedReward}</Typography>
+      {/* <Typography>Undiscounted Reward: {props.country.prophecy.undiscountedReward}</Typography>
       <Typography>Discounted Reward: {props.country.prophecy.discountedReward}</Typography>
       <Typography>Probability of Success: {props.country.prophecy.probability}</Typography>
-      <Typography>Expected Utility: {props.country.prophecy.expectedUtility}</Typography>
+      <Typography>Expected Utility: {props.country.prophecy.expectedUtility}</Typography> */}
 
       <DataGrid
         rows={rows}

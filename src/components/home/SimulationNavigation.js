@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import PublicIcon from '@mui/icons-material/Public'
+import PublicIcon from '@mui/icons-material/Public';
+import SpeedIcon from '@mui/icons-material/Speed';
 
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
@@ -17,7 +18,7 @@ const SimulationNavigation = (props) => {
     <Container>
       <List>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => props.onSelectCountry(null)}>
+          <ListItemButton onClick={() => props.onSelectPage('Overview')}>
             <ListItemAvatar>
               <Avatar sx={{ bgcolor: colors.accent3, color: colors.accent3Text }}>
                 <PublicIcon />
@@ -26,6 +27,18 @@ const SimulationNavigation = (props) => {
             <ListItemText primary="Overview" />
           </ListItemButton>
         </ListItem>
+        
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => props.onSelectPage('Performance')}>
+            <ListItemAvatar>
+              <Avatar sx={{ bgcolor: colors.accent2, color: colors.accent2Text }}>
+                <SpeedIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Performance" />
+          </ListItemButton>
+        </ListItem>
+
         {props.countries.map((country, index) => (
           <ListItem disablePadding key={index}>
             <ListItemButton onClick={() => props.onSelectCountry(country)}>

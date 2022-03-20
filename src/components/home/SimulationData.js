@@ -2,23 +2,34 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import CountryData from '../country/CountryData';
+import Performance from './Performance';
 import SimulationNavigation from './SimulationNavigation';
 import SimulationOverview from '../overview/SimulationOverview';
 
 const SimulationData = (props) => {
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [show, setShow] = useState('Overview');
+
+  const handleSelectCountry = (country) => {
+    setShow('Country');
+    setSelectedCountry(country);
+  }
 
   return (
     <Container>
       <SimulationNavigation
         countries={props.countries}
-        onSelectCountry={country => setSelectedCountry(country)}
+        onSelectCountry={country => handleSelectCountry(country)}
+        onSelectPage={setShow}
       />
 
-      {!selectedCountry &&
+      {show === 'Overview' &&
         <SimulationOverview countries={props.countries} />
       }
-      {selectedCountry &&
+      {show === 'Performance' &&
+        <Performance countries={props.countries} />
+      }
+      {show === 'Country' &&
         <CountryData country={selectedCountry} />
       }
     </Container>
