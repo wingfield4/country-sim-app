@@ -1,11 +1,11 @@
 export default {
-  'Electronics': 'Ele',
-  'Electronics Waste': 'ElW',
-  'Housing': 'Hou',
-  'Housing Waste': 'HoW',
-  'Metallic Alloys': 'MeA',
-  'Metallic Alloys Waste': 'MAW',
-  'Metallic Elements': 'MEl',
-  'Population': 'Pop',
-  'Timber': 'Tim'
+  'Electronics': 'Elect',
+  'ElectronicsWaste': 'ElcWas',
+  'Housing': 'Hous',
+  'HousingWaste': 'HouWa',
+  'MetallicAlloys': 'MetAl',
+  'MetallicAlloysWaste': 'MetAlWa',
+  'MetallicElements': 'MetEle',
+  'Population': 'Popul',
+  'Timber': 'Timber'
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CountryGraph from './CountryGraph';
 import CountryHistory from './CountryHistory';
 import CountryInfo from './CountryInfo';
+import CountryResources from './CountryResources';
 import CountryTitle from './CountryTitle';
 
 import colors from '../../../utilities/colors';
@@ -12,6 +13,7 @@ const CountryWidget = (props) => {
     <Container takingTurn={props.country.takingTurn}>
       <CountryTitle country={props.country} />
       <CountryInfo country={props.country} />
+      <CountryResources country={props.country} />
       <CountryGraph country={props.country} />
       <CountryHistory country={props.country} />
     </Container>

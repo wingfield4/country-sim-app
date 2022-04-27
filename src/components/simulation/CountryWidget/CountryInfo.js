@@ -1,9 +1,9 @@
 import Typography from '../../common/mui/Typography';
 
 const CountryInfo = (props) => {
-  return(
+  return (
     <>
-      <Typography>
+      <Typography variant="caption">
         {props.country.takingTurn ? 'Taking turn...' : 'Waiting for turn'}
       </Typography>
     </>
