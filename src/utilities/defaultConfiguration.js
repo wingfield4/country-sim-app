@@ -2,8 +2,8 @@ const defaultConfiguration = {
   generationMethod: 'csv',
 	oracle: 'PruneAtDepthOracle',
   numberOfCountries: 5,
-  searchDepth: 20,
-	configFileName: null,
+  searchDepth: 3,
+	configFileName: 'example1.csv',
 
 	discountGamma: .99,
 	discountOffset: 10,

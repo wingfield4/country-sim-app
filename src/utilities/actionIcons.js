@@ -1,3 +1,4 @@
+import AccountQuestionIcon from 'mdi-material-ui/AccountQuestion';
 import FactoryIcon from 'mdi-material-ui/Factory';
 import FlashIcon from 'mdi-material-ui/Flash';
 import HomeIcon from 'mdi-material-ui/Home';
@@ -7,7 +8,8 @@ const actionIcons = {
   "Make Electronics": <FlashIcon />,
   "Make Housing": <HomeIcon />,
   "Make Metallic Alloys": <FactoryIcon />,
-  "Transfer": <SwapHorizontalIcon />
+  "Transfer": <SwapHorizontalIcon />,
+  "Propose Transfer": <AccountQuestionIcon />
 }
 
 export default actionIcons;

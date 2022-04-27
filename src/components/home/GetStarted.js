@@ -17,11 +17,18 @@ const GetStarted = (props) => {
         config={props.config}
         setConfig={props.setConfig}
       />
-      <SimulationButton 
-        onClick={props.onRunSimulation}
-        variant="contained">
-        Run the Simulation
-      </SimulationButton>
+      <div>
+        <SimulationButton 
+          onClick={props.onPlanAhead}
+          variant="contained">
+          Plan Ahead
+        </SimulationButton>
+        <SimulationButton 
+          onClick={props.onRunSimulation}
+          variant="contained">
+          Start a Simulation
+        </SimulationButton>
+      </div>
     </Container>
   )
 }
@@ -37,4 +44,5 @@ const Container = styled.div`
 
 const SimulationButton = styled(Button)`
   margin-top: 32px;
+  margin-left: 8px;
 `;

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Error from '../components/common/Error';
 import GetStarted from '../components/home/GetStarted';
@@ -12,14 +13,29 @@ const Home = () => {
   const [countries, setCountries] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [config, setConfig] = useState(defaultConfiguration);
 
-  const [config, setConfig] = useState(defaultConfiguration)
+  const navigate = useNavigate();
 
   const runSimulation = () => {
+    setError(false);
+    setLoading(true);
+    api.startSimulation(config)
+      .then(res => {
+        setLoading(false);
+        navigate('/simulation');
+      })
+      .catch(err => {
+        setError(err);
+        setLoading(false);
+      })
+  }
+
+  const planAhead = () => {
     setCountries(null);
     setError(false);
     setLoading(true);
-    api.runSimulation(config)
+    api.planAhead(config)
       .then(res => {
         setCountries(res.data.countryPool.countries);
         setError(false);
@@ -37,6 +53,7 @@ const Home = () => {
         <GetStarted
           config={config}
           setConfig={setConfig}
+          onPlanAhead={planAhead}
           onRunSimulation={runSimulation}
         />
       }
