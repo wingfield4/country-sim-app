@@ -7,29 +7,24 @@ import colors from '../../../utilities/colors';
 
 const CountryHistory = (props) => {
   return (
-    <Container>
-      {props.country.actionHistory.map((actionSummary, index) => (
-        <>
-          {index !== 0 && <Divider />}
-          <ActionContainer
-            key={index}
-            style={{
-              marginTop: index === 0 ? 'auto' : undefined
-            }}
-          >
-            <ActionColumn>
-              {actionIcons[actionSummary.id]}
-            </ActionColumn>
-            <ActionColumn style={{ flex: 1 }}>
-              {actionSummary.description}
-            </ActionColumn>
-            <ActionColumn>
-              {actionSummary.delta >= 0 ? '+' : '-'}{actionSummary.delta.toFixed(1)}
-            </ActionColumn>
-          </ActionContainer>
-        </>
-      ))}
-    </Container>
+      <Container>
+        {props.country.actionHistory.map((actionSummary, index) => (
+          <>
+            {index !== 0 && <Divider />}
+            <ActionContainer key={index}>
+              <ActionColumn>
+                {actionIcons[actionSummary.id]}
+              </ActionColumn>
+              <ActionColumn style={{ flex: 1 }}>
+                {actionSummary.description}
+              </ActionColumn>
+              <ActionColumn>
+                {actionSummary.delta >= 0 ? '+' : ''}{actionSummary.delta.toFixed(1)}
+              </ActionColumn>
+            </ActionContainer>
+          </>
+        ))}
+      </Container>
   )
 }
 
@@ -37,8 +32,8 @@ export default CountryHistory;
 
 const ActionContainer = styled.div`
   display: flex;
-  align-self: stretch;
   flex-shrink: 0;
+  margin: 0px;
 `;
 
 const ActionColumn = styled(Typography)`
@@ -46,12 +41,10 @@ const ActionColumn = styled(Typography)`
 `;
 
 const Container = styled.div`
-  margin-top: 32px;
-  height: 200px;
   overflow-y: auto;
+  height: 300px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column-reverse;
 `;
 
 const Divider = styled.div`
@@ -59,4 +52,9 @@ const Divider = styled.div`
   flex-shrink: 0;
   width: 95%;
   background-color: ${colors.captionText};
+`;
+
+const OuterContainer = styled.div`
+  height: 300px;
+  display: flex;
 `;
