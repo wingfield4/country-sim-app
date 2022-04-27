@@ -6,9 +6,12 @@ import actionIcons from '../../../utilities/actionIcons';
 import colors from '../../../utilities/colors';
 
 const CountryHistory = (props) => {
+  let sortedActions = props.country.actionHistory.map(a => a);
+  sortedActions.reverse();
+
   return (
       <Container>
-        {props.country.actionHistory.map((actionSummary, index) => (
+        {sortedActions.map((actionSummary, index) => (
           <>
             {index !== 0 && <Divider />}
             <ActionContainer key={index}>
