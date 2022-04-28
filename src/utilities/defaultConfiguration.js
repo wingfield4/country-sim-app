@@ -10,8 +10,10 @@ const defaultConfiguration = {
 	probabilityPenalty: -50,
 
   //resource config
+  availableLandRange: [0, 10],
   electronicsRange: [0, 10],
 	electronicsWasteRange: [0, 10],
+  farmLandRange: [0, 10],
 	housingRange: [0, 5],
 	housingWasteRange: [0, 10],
 	metallicAlloysRange: [0, 10],

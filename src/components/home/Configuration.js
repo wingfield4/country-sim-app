@@ -117,6 +117,16 @@ const Configuration = ({
                 style={{ width: 256 }}
               />
 
+              <Typography>Available Land Range</Typography>
+              <Slider
+                value={config.availableLandRange}
+                onChange={(_, newValue) => setConfig({ ...config, availableLandRange: newValue })}
+                valueLabelDisplay="auto"
+                style={{ width: '100%' }}
+                min={0}
+                max={500}
+              />
+
               <Typography>Electronics Range</Typography>
               <Slider
                 value={config.electronicsRange}
@@ -131,6 +141,16 @@ const Configuration = ({
               <Slider
                 value={config.electronicsWasteRange}
                 onChange={(_, newValue) => setConfig({ ...config, electronicsWasteRange: newValue })}
+                valueLabelDisplay="auto"
+                style={{ width: '100%' }}
+                min={0}
+                max={500}
+              />
+
+              <Typography>Farm Land Range</Typography>
+              <Slider
+                value={config.farmLandRange}
+                onChange={(_, newValue) => setConfig({ ...config, farmLandRange: newValue })}
                 valueLabelDisplay="auto"
                 style={{ width: '100%' }}
                 min={0}

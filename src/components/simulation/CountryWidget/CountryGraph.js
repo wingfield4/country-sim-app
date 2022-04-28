@@ -13,11 +13,11 @@ const CountryGraph = (props) => {
   let data = [{
     name: 'Current',
     quality: Math.round(props.country.stateQuality)
-  }]
+  }];
 
   let prevQuality = props.country.stateQuality;
   for(let i = 0; i < props.country.actionHistory.length - 1 && i < 6; i++) {
-    let action = props.country.actionHistory[props.country.actionHistory.length - 1 - i - 1];
+    let action = props.country.actionHistory[props.country.actionHistory.length - 1 - i];
     let newQuality = prevQuality - action.delta;
     data.unshift({
       name: `-${i+1}`,
